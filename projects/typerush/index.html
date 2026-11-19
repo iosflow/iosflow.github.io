@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Try Scott Sheble’s TypeRush typing test in your browser.">
+  <title>TypeRush Demo | Scott Sheble</title>
+  <link rel="icon" type="image/png" href="../../images/photos/favicon.png">
+  <link rel="stylesheet" href="../../css/styles.css">
+  <script src="demo.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>TypeRush</h1>
+    <nav aria-label="Portfolio"><a href="../../#portfolio">Back to projects</a></nav>
+  </header>
+  <main>
+    <section class="content-box demo" aria-labelledby="demo-title">
+      <h2 id="demo-title">Typing test</h2>
+      <p id="instructions">Type the passage below. The timer starts with your first character. This browser demo tracks speed and accuracy for each run.</p>
+      <p id="passage" class="passage"></p>
+      <label for="typing">Type the passage</label>
+      <textarea id="typing" rows="3" spellcheck="false" autocomplete="off" autocapitalize="off" aria-describedby="instructions passage" disabled></textarea>
+      <p class="stats">
+        <span>Time <strong id="time">0s</strong></span>
+        <span>Speed <strong id="speed">0 WPM</strong></span>
+        <span>Accuracy <strong id="accuracy">100%</strong></span>
+      </p>
+      <button id="reset" type="button">New passage</button>
+      <p id="result" role="status"></p>
+      <noscript><p>Enable JavaScript to try the typing test.</p></noscript>
+    </section>
+  </main>
+</body>
+</html>
