@@ -1,21 +1,15 @@
-# ✨ Scott Sheble’s Portfolio
+# Scott Sheble’s portfolio
 
-Hi, I’m Scott! I’m a computer science grad from Northern Illinois University. This is my little corner of the web for the web apps and iOS projects I’ve built.
+A static portfolio with a Lexos source link and a playable TypeRush typing test. TypeRush’s portfolio demo runs in the browser and includes live timing, speed, accuracy, and character feedback. The original app’s shared leaderboard uses Express and MongoDB.
 
-[🌐 Visit my portfolio](https://iosflow.github.io/)
+## Preview
 
-## A few things I’ve made
+From this directory, run `python3 -m http.server 8000 --bind 127.0.0.1` and open [the local portfolio](http://127.0.0.1:8000/).
 
-| Project | What it does |
-| --- | --- |
-| 🧾 [Lexos](https://github.com/iosflow/csci-467-group-project) | A full-stack capstone project I built with three teammates to manage sales quotes from creation through purchase order. |
-| ⌨️ [TypeRush](https://iosflow.github.io/projects/typerush/) | A typing game that tracks speed and accuracy as you type and saves scores to a leaderboard. |
-| 🌧️ [FocusFlow](https://iosflow.github.io/projects/focusFlow/) | A native iOS app with ambient rain, a Pomodoro timer, and Live Activities for focus sessions. |
+## Publish with GitHub Pages
 
-## Peek under the hood
+Publish this folder as the root of your portfolio repository. Include `index.html`, `css/`, `images/`, and `projects/`. Asset links are relative, so both user sites and repository sites can serve the same files without a build.
 
-The portfolio is built with HTML and CSS and hosted on GitHub Pages. To preview it locally, run `python3 -m http.server 8000` from the repo root and open [localhost:8000](http://localhost:8000).
+For `https://iosflow.github.io/`, the GitHub Pages repository must be named `iosflow.github.io` under the `iosflow` account. In its **Settings → Pages**, select **Deploy from a branch**, then **main** and **/ (root)**. See [GitHub Pages publishing instructions](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
 
-## Say hi 👋
-
-[GitHub](https://github.com/iosflow) · [LinkedIn](https://www.linkedin.com/in/iosflow/) · [Email](mailto:iosflow@icloud.com)
+Check that the home page loads, the Lexos button opens its repository, and the TypeRush demo opens at `projects/typerush/`.
