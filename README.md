@@ -1,5 +1,7 @@
 # Scott Sheble’s portfolio
 
+View at: https://iosflow.github.io/
+
 A static portfolio with a Lexos source link and a playable TypeRush typing test. TypeRush’s portfolio demo runs in the browser and includes live timing, speed, accuracy, and character feedback. The original app’s shared leaderboard uses Express and MongoDB.
 
 ## Preview
