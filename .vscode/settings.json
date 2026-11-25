@@ -35,7 +35,9 @@
         "titleBar.activeBackground": "#dd0531",
         "titleBar.activeForeground": "#e7e7e7",
         "titleBar.inactiveBackground": "#dd053199",
-        "titleBar.inactiveForeground": "#e7e7e799"
+        "titleBar.inactiveForeground": "#e7e7e799",
+        "minimap.background": "#00000000",
+        "scrollbar.shadow": "#00000000"
     },
     "peacock.color": "#dd0531"
 }
