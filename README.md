@@ -10,7 +10,7 @@ From this directory, run `python3 -m http.server 8000 --bind 127.0.0.1` and open
 
 ## Publish with GitHub Pages
 
-Publish this folder as the root of your portfolio repository. Include `index.html`, `css/`, `images/`, and `projects/`. Asset links are relative, so both user sites and repository sites can serve the same files without a build.
+Publish this folder as the root of your portfolio repository. Include `index.html`, `css/`, `images/`, `js/`, and `projects/`. Asset links are relative, so both user sites and repository sites can serve the same files without a build.
 
 For `https://iosflow.github.io/`, the GitHub Pages repository must be named `iosflow.github.io` under the `iosflow` account. In its **Settings → Pages**, select **Deploy from a branch**, then **main** and **/ (root)**. See [GitHub Pages publishing instructions](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
 
