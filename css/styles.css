@@ -541,14 +541,18 @@ form textarea {
 
 .header-links {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  justify-content: safe center;
   align-items: center;
   gap: 0.35rem 0.75rem;
   list-style: none;
   margin: 0.25rem 1rem 0;
   padding: 0;
+  white-space: nowrap;
   font: 1rem/1.35 Georgia, "Times New Roman", serif;
+}
+
+.header-links li {
+  flex: none;
 }
 
 .header-links li + li {
@@ -562,6 +566,14 @@ form textarea {
 
 .header-label-short {
   display: none;
+}
+
+.header-links-compact .header-label-full {
+  display: none;
+}
+
+.header-links-compact .header-label-short {
+  display: inline;
 }
 
 .portfolio-header + main > .content-box {
