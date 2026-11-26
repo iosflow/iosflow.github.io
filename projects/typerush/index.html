@@ -7,12 +7,25 @@
   <title>TypeRush Demo | Scott Sheble</title>
   <link rel="icon" type="image/png" href="../../images/photos/favicon.png">
   <link rel="stylesheet" href="../../css/styles.css">
+  <meta name="typerush-api" content="">
   <script src="demo.js" defer></script>
+  <script type="module" src="leaderboard-entry.js"></script>
 </head>
 <body>
-  <header>
-    <h1>TypeRush</h1>
-    <nav aria-label="Portfolio"><a href="../../#portfolio">Back to projects</a></nav>
+  <header class="portfolio-header">
+    <a class="header-logo-link" href="../../" aria-label="Home">
+      <picture>
+        <source media="(prefers-reduced-motion: reduce)" srcset="../../images/photos/favicon.png">
+        <img class="header-logo" src="../../images/photos/logo1.gif" width="140" height="142" alt="">
+      </picture>
+    </a>
+    <h1><a href="../../">Scott Sheble</a></h1>
+    <ul class="header-links" aria-label="Site links and profiles">
+      <li><a href="mailto:scott.sheble@gmail.com">scott.sheble@gmail.com</a></li>
+      <li><a href="../">Back to Projects</a></li>
+      <li><a href="https://www.linkedin.com/in/iosflow/">linkedin/in/scott-sheble</a></li>
+      <li><a href="https://github.com/iosflow">github.com/scott-sheble</a></li>
+    </ul>
   </header>
   <main>
     <section class="content-box demo" aria-labelledby="demo-title">
@@ -29,6 +42,10 @@
       <button id="reset" type="button">New passage</button>
       <p id="result" role="status"></p>
       <noscript><p>Enable JavaScript to try the typing test.</p></noscript>
+    </section>
+    <section class="content-box demo leaderboard" aria-labelledby="leaderboard-title">
+      <h2 id="leaderboard-title">Leaderboard</h2>
+      <div id="leaderboard"><p role="status">Loading the leaderboard…</p></div>
     </section>
   </main>
 </body>

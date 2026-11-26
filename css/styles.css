@@ -213,7 +213,7 @@ main.grid {
   margin: 0 auto;        /* ← centers each card */
 }
 
-.project-grid a {
+.project-grid article > a {
   display: inline-block;
   margin-top: 10px;
   color: var(--project-link);
@@ -613,7 +613,7 @@ main > .content-box {
   margin: 0;
 }
 
-.project-grid a {
+.project-grid article > a {
   align-self: flex-start;
   margin-top: auto;
   padding: 0.5rem 0.75rem;
@@ -670,8 +670,48 @@ main > .content-box {
   margin: 0 auto;
 }
 
+.project-demo {
+  margin-top: 1.5rem;
+}
+
+.project-demo-image {
+  display: block;
+  width: min(100%, 24rem);
+  max-height: 80svh;
+  height: auto;
+  object-fit: contain;
+  margin-inline: auto;
+  background: #000;
+  border-radius: 0.5rem;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .flurries { display: none; }
   .cta-btn { transition: none; }
+}
+
+.leaderboard .score-list {
+  padding-inline-start: 1.5rem;
+}
+
+.leaderboard .score-list li + li {
+  margin-top: 0.75rem;
+}
+
+.leaderboard .score-form,
+.leaderboard .score-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.leaderboard .score-form input {
+  width: min(12rem, 100%);
+  box-sizing: border-box;
+}
+
+.leaderboard .score-actions {
+  margin-top: 0.35rem;
 }
