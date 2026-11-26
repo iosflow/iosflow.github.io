@@ -9,14 +9,32 @@
   <link rel="stylesheet" href="../../css/styles.css">
 </head>
 <body>
-  <header>
-    <h1>FocusFlow</h1>
-    <nav aria-label="Portfolio"><a href="../../#portfolio">Back to projects</a></nav>
+  <header class="portfolio-header">
+    <a class="header-logo-link" href="../../" aria-label="Home">
+      <picture>
+        <source media="(prefers-reduced-motion: reduce)" srcset="../../images/photos/favicon.png">
+        <img class="header-logo" src="../../images/photos/logo1.gif" width="140" height="142" alt="">
+      </picture>
+    </a>
+    <h1><a href="../../">Scott Sheble</a></h1>
+    <ul class="header-links" aria-label="Site links and profiles">
+      <li><a href="mailto:scott.sheble@gmail.com">scott.sheble@gmail.com</a></li>
+      <li><a href="../">Back to Projects</a></li>
+      <li><a href="https://www.linkedin.com/in/iosflow/">linkedin/in/scott-sheble</a></li>
+      <li><a href="https://github.com/iosflow">github.com/scott-sheble</a></li>
+    </ul>
   </header>
   <main>
     <section class="content-box" aria-labelledby="overview">
       <h2 id="overview">Ambient rain and focus sessions for iOS</h2>
       <p>FocusFlow, displayed as ASMRainStorm on iOS, pairs ambient rain recordings with tools for focused work and relaxation.</p>
+      <div class="project-demo">
+        <h3>App demo</h3>
+        <picture>
+          <source media="(prefers-reduced-motion: reduce)" srcset="../../images/photos/focusFlow-splash.PNG">
+          <img class="project-demo-image" src="focusFlow-demo.GIF" alt="FocusFlow app demo" width="602" height="1310" decoding="async">
+        </picture>
+      </div>
       <ul>
         <li>Choose from four rain sounds, from soft rain to thunderstorms.</li>
         <li>Run Pomodoro focus sessions with timed breaks or set a sleep timer.</li>

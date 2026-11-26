@@ -19,15 +19,19 @@ let startedAt = null;
 let timer;
 let correctCharacters = 0;
 let typedCharacters = 0;
+let attempts = 0;
+let correctAttempts = 0;
+let previousInput = "";
 
 function updateStats(now = performance.now()) {
   const elapsed = startedAt === null ? 0 : (now - startedAt) / 1000;
   const wpm = elapsed >= 1 ? Math.round((correctCharacters / 5) * (60 / elapsed)) : 0;
-  const percentage = typedCharacters ? Math.round(correctCharacters / typedCharacters * 100) : 100;
+  const percentage = attempts ? Math.round(correctAttempts / attempts * 100) : 100;
 
   time.textContent = `${elapsed.toFixed(1)}s`;
   speed.textContent = `${wpm} WPM`;
   accuracy.textContent = `${percentage}%`;
+  return { wpm, accuracy: percentage };
 }
 
 function preparePassage() {
@@ -35,6 +39,9 @@ function preparePassage() {
   startedAt = null;
   correctCharacters = 0;
   typedCharacters = 0;
+  attempts = 0;
+  correctAttempts = 0;
+  previousInput = "";
   passageDisplay.replaceChildren(...Array.from(passages[passageIndex], (character) => {
     const span = document.createElement("span");
     span.textContent = character;
@@ -45,6 +52,7 @@ function preparePassage() {
   typing.readOnly = false;
   result.textContent = "";
   updateStats();
+  document.dispatchEvent(new CustomEvent("typerush:run", { detail: null }));
 }
 
 typing.addEventListener("input", (event) => {
@@ -56,6 +64,15 @@ typing.addEventListener("input", (event) => {
     timer = setInterval(updateStats, 200);
   }
 
+  let firstChange = 0;
+  while (firstChange < input.length && input[firstChange] === previousInput[firstChange]) {
+    firstChange++;
+  }
+  for (let index = firstChange; index < input.length; index++) {
+    attempts++;
+    if (input[index] === passages[passageIndex][index]) correctAttempts++;
+  }
+  previousInput = input;
   typedCharacters = input.length;
   correctCharacters = 0;
   Array.from(passageDisplay.children).forEach((character, index) => {
@@ -64,11 +81,12 @@ typing.addEventListener("input", (event) => {
     character.classList.toggle("incorrect", index < typedCharacters && !isCorrect);
     if (isCorrect) correctCharacters++;
   });
-  updateStats(now);
+  const score = updateStats(now);
 
   if (input === passages[passageIndex]) {
     clearInterval(timer);
     typing.readOnly = true;
+    document.dispatchEvent(new CustomEvent("typerush:run", { detail: score }));
     result.textContent = `Finished in ${time.textContent} at ${speed.textContent} with ${accuracy.textContent} accuracy.`;
   }
 });
